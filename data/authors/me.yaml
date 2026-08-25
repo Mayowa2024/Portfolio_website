@@ -1,0 +1,100 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Mayowa Adebambo
+  given: Mayowa
+  family: Adebambo
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+postnominals: []
+status:
+  icon: "🤖"
+role: AI, Robotics & Autonomous Systems Engineer
+bio: |
+  I work at the intersection of artificial intelligence, robotics, computer vision,
+  and autonomous systems. My interests centre on perception and localisation for
+  intelligent machines, with a particular focus on semantic SLAM and visual place recognition.
+
+affiliations:
+  - name: Oxford Brookes University
+    url: https://www.brookes.ac.uk/
+
+links:
+  - icon: at-symbol
+    url: mailto:YOUR_EMAIL@example.com
+    label: Email
+  - icon: brands/github
+    url: https://github.com/Mayowa2024
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/YOUR_LINKEDIN/
+
+interests:
+  - Semantic SLAM
+  - Visual Place Recognition
+  - Computer Vision
+  - Autonomous Systems
+  - Embodied AI
+  - Multimodal Perception
+
+education:
+  - degree: MSc Data Science and Artificial Intelligence
+    institution: Oxford Brookes University
+    start: 2025-09-01
+    end: 2026-09-30
+    summary: |
+      Research and engineering work spanning machine learning, computer vision,
+      robotics, autonomous systems, and semantic localisation.
+  - degree: BEng Mechanical Engineering
+    institution: Federal University of Agriculture, Abeokuta
+    start: 2018-01-01
+    end: 2024-01-01
+
+experience:
+  - role: Perception Lead — Formula Student AI
+    org: Oxford Brookes Racing Autonomous
+    start: 2025-01-01
+    end: 2026-07-31
+    summary: |
+      Worked on perception and autonomous-system development for Formula Student AI,
+      including real-time cone detection and deployment on embedded compute.
+  - role: Research Assistant
+    org: Oxford Brookes University
+    start: 2026-06-01
+    summary: |
+      Contributed to autonomous-systems and robotics research activities.
+
+skills:
+  - name: Robotics & Perception
+    items:
+      - label: ROS 2
+        level: 5
+      - label: Computer Vision
+        level: 5
+      - label: SLAM
+        level: 4
+      - label: Autonomous Systems
+        level: 4
+  - name: AI & Software
+    items:
+      - label: Python
+        level: 5
+      - label: C++
+        level: 4
+      - label: Machine Learning
+        level: 5
+      - label: Deep Learning
+        level: 5
+
+languages:
+  - name: English
+    level: 5
+    label: Fluent
+
+awards:
+  - title: Formula Student AI UK 2026 — Winning Team
+    awarder: Formula Student UK
+    date: "2026-07-01"
+    summary: Member of the Oxford Brookes autonomous racing team.
+    icon: hero/trophy
