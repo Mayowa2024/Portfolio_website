@@ -1,0 +1,7 @@
+{{- /* Preserve external-link behaviour while making root-relative Markdown
+      links safe for GitHub Pages project subdirectories. */ -}}
+{{- $destination := .Destination -}}
+{{- if strings.HasPrefix $destination "/" -}}
+  {{- $destination = relURL (strings.TrimPrefix "/" $destination) -}}
+{{- end -}}
+<a href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
