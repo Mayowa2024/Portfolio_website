@@ -1,0 +1,286 @@
+/* Keep the homepage introduction compact on wider screens. The biography
+   block already provides internal padding, so the section wrapper does not
+   need the theme's full section spacing as well. */
+@media (min-width: 768px) {
+  #section-resume-biography-3 {
+    padding-block: 2.5rem;
+  }
+
+  #section-resume-biography-3 .resume-biography {
+    padding-block: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #section-resume-biography-3 {
+    padding-top: 2.5rem;
+  }
+}
+
+/* Keep the homepage CV call-to-action solid instead of the block's default gradient. */
+#section-resume-biography-3 a[href*="/uploads/"] {
+  background-color: var(--color-primary-600, #cc7e7b);
+  background-image: none;
+}
+
+#section-resume-biography-3 a[href*="/uploads/"]:hover {
+  background-color: var(--color-primary-700, #b5706d);
+}
+
+/* Present skills as static, recruiter-friendly tags instead of proficiency bars. */
+#section-resume-skills .grid {
+  max-width: 72rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#section-resume-skills .grid > .w-full {
+  padding: 1rem;
+  border: 1px solid rgb(121 114 107 / 22%);
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 20%);
+}
+
+#section-resume-skills .grid > .w-full:nth-child(2),
+#section-resume-skills .grid > .w-full:nth-child(3) {
+  grid-column: span 2;
+}
+
+#section-resume-skills .grid > .w-full > .mb-5 {
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+}
+
+#section-resume-skills .skills-content {
+  display: inline-flex;
+  margin: 0 0.3rem 0.4rem 0;
+}
+
+#section-resume-skills .skills-name {
+  padding: 0.35rem 0.625rem;
+  border: 1px solid rgb(var(--hb-primary-500-rgb) / 38%);
+  border-radius: 999px;
+  background: rgb(var(--hb-primary-500-rgb) / 12%);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+#section-resume-skills .skills-wrapper {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #section-resume-skills .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #section-resume-skills .grid > .w-full:nth-child(2),
+  #section-resume-skills .grid > .w-full:nth-child(3) {
+    grid-column: auto;
+  }
+}
+
+/* Replace language percentage rings with compact static proficiency cards. */
+#section-resume-languages .max-w-prose > div:last-child {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+#section-resume-languages .max-w-prose > div:last-child > div {
+  padding: 1rem;
+  border: 1px solid rgb(121 114 107 / 22%);
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 20%);
+}
+
+#section-resume-languages svg,
+#section-resume-languages .absolute.text-3xl {
+  display: none;
+}
+
+#section-resume-languages .w-28.h-28 {
+  display: none;
+}
+
+#section-resume-languages .text-1xl {
+  font-weight: 700;
+}
+
+@media (max-width: 639px) {
+  #section-resume-languages .max-w-prose > div:last-child {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Give project media a consistent, polished treatment. */
+.prose figure {
+  margin-block: 0;
+}
+
+.prose p:has(> figure) {
+  margin-block: 2rem;
+}
+
+.prose figure img,
+.prose video {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 28px rgb(15 23 42 / 12%);
+}
+
+.prose video {
+  display: block;
+  width: 100%;
+  margin-block: 1.5rem 3rem;
+  background: #000;
+}
+
+@media (max-width: 767px) {
+  .prose p:has(> figure) {
+    margin-block: 1.5rem;
+  }
+
+  .prose video {
+    margin-block: 1rem 2rem;
+  }
+}
+
+/* Homepage Formula Student championship ribbon. */
+.photo-ribbon {
+  width: 100%;
+  overflow: hidden;
+}
+
+.photo-ribbon__header {
+  max-width: 80rem;
+  margin: 0 auto 0.875rem;
+  padding-inline: 1.5rem;
+}
+
+.photo-ribbon__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: inherit;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.photo-ribbon__cta {
+  flex: 0 0 auto;
+  color: var(--color-primary-600, #4f46e5);
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.photo-ribbon__viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 4rem, #000 calc(100% - 4rem), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4rem, #000 calc(100% - 4rem), transparent);
+}
+
+.photo-ribbon__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: photo-ribbon-scroll 42s linear infinite;
+}
+
+.photo-ribbon__set {
+  display: flex;
+  flex: none;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.photo-ribbon__item {
+  display: block;
+  flex: 0 0 20rem;
+  width: 20rem;
+  height: 11.875rem;
+  overflow: hidden;
+  border: 1px solid rgb(148 163 184 / 25%);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 12%);
+}
+
+.photo-ribbon__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.photo-ribbon__item:hover img,
+.photo-ribbon__item:focus-visible img {
+  transform: scale(1.035);
+}
+
+.photo-ribbon__track:hover,
+.photo-ribbon__track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes photo-ribbon-scroll {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .photo-ribbon__header {
+    padding-inline: 1rem;
+  }
+
+  .photo-ribbon__title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .photo-ribbon__viewport {
+    mask-image: linear-gradient(to right, transparent, #000 1.5rem, #000 calc(100% - 1.5rem), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.5rem, #000 calc(100% - 1.5rem), transparent);
+  }
+
+  .photo-ribbon__track {
+    animation-duration: 48s;
+  }
+
+  .photo-ribbon__set {
+    gap: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .photo-ribbon__item {
+    flex-basis: 14rem;
+    width: 14rem;
+    height: 8.3125rem;
+    border-radius: 0.625rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-ribbon__viewport {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .photo-ribbon__track {
+    animation: none;
+  }
+
+  .photo-ribbon__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .photo-ribbon__item img {
+    transition: none;
+  }
+}

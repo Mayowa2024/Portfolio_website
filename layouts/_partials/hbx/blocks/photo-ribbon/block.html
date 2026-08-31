@@ -1,0 +1,40 @@
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ $project_path := $content.project | default "/projects/formula-student-ai" }}
+{{ $project := site.GetPage $project_path }}
+
+{{ if and $project $content.images }}
+<div class="photo-ribbon" aria-label="{{ $content.title | default "Featured project gallery" }}">
+  <div class="photo-ribbon__header">
+    <a href="{{ $project.RelPermalink }}" class="photo-ribbon__title">
+      <span>{{ $content.title | default "Featured project" }}</span>
+      <span class="photo-ribbon__cta">Explore project <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+  <div class="photo-ribbon__viewport">
+    <div class="photo-ribbon__track">
+      {{ range $set_index := seq 2 }}
+        <div class="photo-ribbon__set"{{ if eq $set_index 2 }} aria-hidden="true"{{ end }}>
+          {{ range $content.images }}
+            {{ $item := . }}
+            {{ $image := $project.Resources.GetMatch $item.file }}
+            {{ with $image }}
+              {{ $processed := .Fill "640x380 Center webp q85" }}
+              <a href="{{ $project.RelPermalink }}" class="photo-ribbon__item"{{ if eq $set_index 2 }} tabindex="-1"{{ end }}>
+                <img
+                  src="{{ $processed.RelPermalink }}"
+                  width="{{ $processed.Width }}"
+                  height="{{ $processed.Height }}"
+                  alt="{{ if eq $set_index 1 }}{{ $item.alt | default "Formula Student AI engineering and competition" }}{{ end }}"
+                  loading="{{ if and (eq $set_index 1) (eq $item.priority true) }}eager{{ else }}lazy{{ end }}"
+                  decoding="async">
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

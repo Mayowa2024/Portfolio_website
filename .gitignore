@@ -45,6 +45,10 @@ node_modules/
 pagefind/
 static/pagefind/
 
+# Private/editable research sources. Recruiter-facing exports belong in
+# static/uploads/; originals and working files remain local only.
+source-documents/
+
 # ============================================================================
 # Operating System
 # ============================================================================

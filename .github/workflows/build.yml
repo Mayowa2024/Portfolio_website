@@ -79,10 +79,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        # Install Tailwind CLI if package.json exists
+        # Install exactly the dependency versions recorded in pnpm-lock.yaml.
         if [ -f "package.json" ]; then
-          echo "Installing Tailwind dependencies..."
-          pnpm install --no-frozen-lockfile || npm install
+          echo "Installing frontend dependencies..."
+          pnpm install --frozen-lockfile
         fi
 
     - name: Verify Tailwind CSS dependency
@@ -132,7 +132,7 @@ jobs:
         HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
       run: |
         echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-        hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        hugo --cleanDestinationDir --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
     - name: Generate Pagefind search index (if applicable)
       run: |
