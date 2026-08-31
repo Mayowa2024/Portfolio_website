@@ -47,6 +47,3 @@ Pushing the `main` branch triggers the GitHub Pages workflow in `.github/workflo
 
 The fallback URL used for local production metadata is configured in `config/_default/hugo.yaml`.
 
-## Content privacy
-
-Only files placed under `static/` are published directly. Editable dissertations, working papers, and original office documents should remain under the ignored `source-documents/` directory. Publish only deliberate PDF exports through `static/uploads/`.
